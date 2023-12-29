@@ -31,6 +31,10 @@ func NewValidationError(message string) *AppError {
 	return newGenericError(message, http.StatusUnprocessableEntity)
 }
 
+func NewAuthorizationError(message string) *AppError {
+	return newGenericError(message, http.StatusUnauthorized)
+}
+
 func newGenericError(message string, code int) *AppError {
 	return &AppError{
 		Message: message,
